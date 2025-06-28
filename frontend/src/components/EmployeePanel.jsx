@@ -38,6 +38,9 @@ const EmployeePanel = () => {
       <input placeholder="Cargo" value={cargo} onChange={e => setCargo(e.target.value)} />
       <button onClick={agregarEmpleado}>Agregar</button>
 
+      
+      
+
       <ul>
         {empleados.map(e => (
           <li key={e._id}>{e.nombre} - {e.cargo} <button onClick={() => eliminarEmpleado(e._id)}>Eliminar</button></li>
