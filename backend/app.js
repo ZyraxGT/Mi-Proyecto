@@ -5,6 +5,10 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.get('/api/usuarios', async (req, res) => {
+  const usuarios = await Usuario.find({}, { contrasena: 0 }); // ocultamos la contraseña
+  res.json(usuarios);
+});
 
 mongoose.connect('mongodb://localhost:27017/miapp');
 

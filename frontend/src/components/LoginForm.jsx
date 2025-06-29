@@ -19,14 +19,24 @@ const LoginForm = ({ onLoginSuccess, onVolver, onBack }) => {
   };
 
   return (
-    <div>
-      <h2>Iniciar sesión</h2>
-      <input placeholder="Usuario" value={usuario} onChange={e => setUsuario(e.target.value)} />
-      <input type="password" placeholder="Contraseña" value={contrasena} onChange={e => setContrasena(e.target.value)} />
-      <br /><br />
-      <button onClick={login}>Entrar</button>
-      <button onClick={onVolver}>Inicio</button>
-      <button onClick={onBack}>Volver</button>
+    <div className="max-w-md mx-auto bg-white p-6 rounded shadow space-y-4">
+      <h2 className="text-xl font-semibold text-center text-blue-700">Iniciar sesión</h2>
+      <input
+        className="w-full border rounded px-3 py-2"
+        placeholder="Usuario"
+        value={usuario}
+        onChange={e => setUsuario(e.target.value)}
+      />
+      <input
+        type="password"
+        className="w-full border rounded px-3 py-2"
+        placeholder="Contraseña"
+        value={contrasena}
+        onChange={e => setContrasena(e.target.value)}
+      />
+      <div className="flex justify-between">
+        <button onClick={login} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Entrar</button>
+      </div>
     </div>
   );
 };
